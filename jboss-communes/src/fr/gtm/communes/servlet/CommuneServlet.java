@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.gtm.communes.entities.Commune;
-import fr.gtm.communes.service.CommuneService;
+import fr.gtm.communes.service.CommuneServiceRemote;
 
 
 /**
@@ -21,7 +21,7 @@ import fr.gtm.communes.service.CommuneService;
 @WebServlet("/CommuneServlet")
 public class CommuneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	@EJB private CommuneService service;
+	@EJB private CommuneServiceRemote service;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cp = request.getParameter("cp");

@@ -1,5 +1,7 @@
 package fr.gtm.communes.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -14,7 +16,7 @@ import javax.persistence.Table;
 @Table(name="regions")
 @NamedQuery(name="Region.all", query = "SELECT r.nom FROM Region r")
 @Access(AccessType.FIELD)
-public class Region {
+public class Region implements Serializable{
 	@Id
 	private String code;
 	@Column(name="name")

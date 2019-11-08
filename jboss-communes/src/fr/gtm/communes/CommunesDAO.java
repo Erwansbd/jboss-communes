@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import fr.gtm.communes.entities.Commune;
+import fr.gtm.communes.entities.Region;
 
 @Singleton
 public class CommunesDAO {
@@ -16,6 +17,10 @@ public class CommunesDAO {
 		return em.createNamedQuery("Commune.byCodePostal", Commune.class)
 					.setParameter("codePostal", cp+"%")
 					.getResultList();
+	}
+	
+	public List<Region> getRegions() {
+		return em.createNamedQuery("Region.all", Region.class).getResultList();
 	}
 
 }

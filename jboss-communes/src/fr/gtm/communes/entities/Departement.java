@@ -1,5 +1,7 @@
 package fr.gtm.communes.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import javax.persistence.Table;
 @Table(name="departments")
 @NamedQuery(name = "Departement.all",query = "SELECT d.nom FROM Departement d")
 @NamedQuery(name = "Departement.allObjects",query = "SELECT d FROM Departement d")
-public class Departement {
+public class Departement implements Serializable{
 	@Id
 	private String code;
 	@Column(name="name")

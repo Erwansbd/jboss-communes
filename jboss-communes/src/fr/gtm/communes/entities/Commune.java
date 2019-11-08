@@ -1,5 +1,7 @@
 package fr.gtm.communes.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -24,7 +26,8 @@ import javax.persistence.Table;
 		@NamedQuery(name = "Commune.byRegion",
 				query = "SELECT c FROM Commune c WHERE UPPER(c.departement.region.nom) = :nom")
 })
-public class Commune {
+public class Commune implements Serializable{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
