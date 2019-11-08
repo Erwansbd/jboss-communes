@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="regions")
-@NamedQuery(name="Region.all", query = "SELECT r.nom FROM Region r")
+@NamedQuery(name="Region.all", query = "SELECT r FROM Region r")
 @Access(AccessType.FIELD)
 public class Region implements Serializable{
 	@Id
