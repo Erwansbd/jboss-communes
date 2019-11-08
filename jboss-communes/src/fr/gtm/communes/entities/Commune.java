@@ -14,7 +14,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 @Table(name="cities")
 @Access(AccessType.FIELD)
@@ -30,14 +33,19 @@ public class Commune implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@XmlElement
 	private long id;
 	@Column(name="name")
+	@XmlElement
 	private String nom;
 	@Column(name="zip_code")
+	@XmlElement
 	private String codePostal;
 	@Column(name="gps_lat")
+	@XmlElement
 	private double gpsLatitude;
 	@Column(name="gps_lng")
+	@XmlElement
 	private double gpsLongitude;
 	@ManyToOne
 	@JoinColumn(name="department_code")
@@ -67,7 +75,6 @@ public class Commune implements Serializable{
 	public double getGpsLongitude() {
 		return gpsLongitude;
 	}
-
 
 	@Override
 	public String toString() {

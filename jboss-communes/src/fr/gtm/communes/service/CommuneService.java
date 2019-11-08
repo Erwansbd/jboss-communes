@@ -26,4 +26,11 @@ public class CommuneService implements CommuneServiceRemote, CommuneServiceLocal
 	public List<Region> getRegions() {
 		return dao.getRegions();
 	}
+
+	public String decimalToSexagesimal(double value) {
+		int degres = (int) value;
+		double mn = (value - degres)*60;
+		double sec = (mn - (int)mn)*60;
+		return String.format("%2d° %2d\' %2.2f\"", degres,(int)mn,sec);
+	}
 }

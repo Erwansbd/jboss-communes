@@ -9,5 +9,6 @@ public interface CommuneServiceInterface {
 	
 	List<Commune> getCommunesByCodePostalLike(String cp);
 	List<Region> getRegions();
+	String decimalToSexagesimal(double value);
 
 }
